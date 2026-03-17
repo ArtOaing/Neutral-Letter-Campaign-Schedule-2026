@@ -1,0 +1,2694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Neutral Letter Campaign — Feb 12 to Mar 12, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #f5f4f0;
+    --surface: #ffffff;
+    --surface2: #f0ede8;
+    --border: #e2ddd6;
+    --accent: #b8601e;
+    --accent-light: #f5e6d8;
+    --green: #2d7d46;
+    --green-light: #dff0e5;
+    --blue: #1d5fa8;
+    --blue-light: #deeaf8;
+    --text: #1a1714;
+    --text-muted: #6b6460;
+    --md: #1d5fa8;
+    --sc: #b8601e;
+    --me: #5b3e9e;
+    --me-light: #ebe5f8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+
+  .wrapper { max-width: 1200px; margin: 0 auto; }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--text);
+    animation: fadeUp 0.5s ease both;
+  }
+  .header-left .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .header-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    line-height: 1.15;
+    color: var(--text);
+  }
+  .header-right {
+    text-align: right;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.8;
+    padding-top: 6px;
+  }
+
+  /* SUMMARY CARDS */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.5s ease 0.08s both;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    border-top: 3px solid var(--c, var(--accent));
+    text-align: center;
+  }
+  .card .card-label {
+    font-size: 9px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .card .card-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--text);
+    line-height: 1;
+  }
+  .card .card-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .card .card-sub2 {
+    font-size: 11px;
+    color: var(--accent);
+    margin-top: 3px;
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* INVENTORY BANNER */
+  .inventory-banner {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--text);
+    border-radius: 8px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease 0.1s both;
+  }
+  .inv-item {
+    padding: 16px 18px;
+    text-align: center;
+  }
+  .inv-divider {
+    background: var(--border);
+    width: 1px;
+  }
+  .inv-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .inv-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--text);
+    line-height: 1;
+  }
+  .inv-value.used { color: var(--accent); }
+  .inv-value.remaining { color: var(--green); }
+  .inv-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  /* TABLE */
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 10px;
+    animation: fadeUp 0.5s ease 0.12s both;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  thead tr { background: var(--surface2); }
+  thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 8px 7px;
+    text-align: left;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  thead th.th-center { text-align: center; }
+  thead th.th-right { text-align: right; }
+  thead .cost-group-header {
+    background: #fdf0e5;
+    color: var(--accent);
+    text-align: right;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    border-left: 1px solid #f0c89a;
+  }
+  tbody tr { border-top: 1px solid var(--border); }
+  tbody tr:hover { background: #faf9f7; }
+  td { padding: 6px 7px; vertical-align: middle; text-align: left; }
+  td.mono { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text-muted); text-align: center; width: 36px; }
+  td.td-right { text-align: right; font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+  td.td-center { text-align: center; }
+  .state-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .md { background: var(--blue-light); color: var(--md); }
+  .sc { background: var(--accent-light); color: var(--sc); }
+  .me { background: var(--me-light); color: var(--me); }
+  .mi { background: #dbeafe; color: #2563eb; }
+  .ny { background: #fce7f3; color: #9d174d; }
+  .state-toggle-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: 2px solid #e2e0d8;
+    background: var(--surface);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .state-toggle-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .state-toggle-btn.active { background: var(--sbg, #1d5fa8); border-color: var(--sbg, #1d5fa8); color: #fff; }
+  .status-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 2px 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .delivered { background: var(--green-light); color: var(--green); }
+  .mailbox { background: #fff3cd; color: #856404; }
+  .estimated { background: #e8eaf6; color: #3949ab; }
+  td.cost-paid {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--green);
+    font-weight: 600;
+    background: var(--green-light);
+    text-align: center;
+    border-left: 1px solid #c6e9d3;
+  }
+  td.cost-full {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-left: 1px solid #f0c89a;
+    background: #fdf8f4;
+    text-align: right;
+  }
+  td.cost-remaining {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    background: #fdf0e5;
+    text-align: right;
+  }
+  tfoot tr { background: var(--surface2); border-top: 2px solid var(--text); }
+  tfoot td { font-weight: 600; padding: 12px 14px; font-size: 13px; vertical-align: middle; }
+  tfoot .tf-label { font-family: 'IBM Plex Sans', sans-serif; }
+  tfoot .tf-count { font-family: 'IBM Plex Mono', monospace; text-align: right; }
+  tfoot .tf-full {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-muted);
+    font-size: 12px;
+    border-left: 1px solid #f0c89a;
+    background: #fdf8f4;
+    text-align: right;
+  }
+  tfoot .tf-remaining {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    background: #fdf0e5;
+    text-align: right;
+  }
+
+  .cost-legend {
+    display: flex;
+    gap: 20px;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: 'IBM Plex Mono', monospace;
+    margin-bottom: 28px;
+    padding: 10px 14px;
+    background: #fdf8f4;
+    border: 1px solid #f0c89a;
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+  }
+  .cost-legend span { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+
+  /* STATE BARS */
+  .state-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.5s ease 0.16s both;
+  }
+  .state-bars { margin-top: 14px; display: flex; flex-direction: column; gap: 12px; }
+  .state-row { display: grid; grid-template-columns: 110px 1fr 70px; align-items: center; gap: 12px; }
+  .bar-track { height: 7px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 99px; animation: grow 0.9s ease 0.4s both; }
+  @keyframes grow { from { width: 0 !important; } }
+  .state-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; display: flex; align-items: center; gap: 6px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .state-count { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text-muted); text-align: right; }
+
+  /* FORECAST */
+  .forecast-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.5s ease 0.2s both;
+  }
+  .forecast-intro {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin: 6px 0 14px;
+    line-height: 1.6;
+  }
+  .forecast-intro strong { color: var(--text); }
+
+  .scenarios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .scenario-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 10px;
+    text-align: center;
+    border-top: 3px solid var(--c, var(--accent));
+  }
+  .sc-a { --c: #6b7280; }
+  .sc-b { --c: #2d7d46; }
+  .sc-c { --c: #1d5fa8; }
+  .sc-d { --c: #b8601e; }
+
+  .sc-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .sc-rate {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--text);
+    line-height: 1;
+  }
+  .sc-rate-label {
+    font-size: 9px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    margin-top: 2px;
+  }
+  .sc-funnel { display: flex; flex-direction: column; align-items: center; }
+  .sc-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 5px 8px;
+    width: 100%;
+  }
+  .sc-step.hl { border-color: var(--c); }
+  .sc-step.hl2 { border-color: var(--green); background: var(--green-light); }
+  .sc-step-label {
+    font-size: 7px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1px;
+  }
+  .sc-step-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1;
+  }
+  .sc-step-val.v-accent { color: var(--c); }
+  .sc-step-val.v-green { color: var(--green); }
+  .sc-arrow { font-size: 11px; color: var(--text-muted); padding: 2px 0; line-height: 1; }
+
+  /* Contract conversion mini-table inside card */
+  .sc-contracts {
+    margin-top: 8px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .sc-contracts th {
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-size: 7px;
+    padding: 4px 4px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    font-weight: 500;
+    text-align: center;
+  }
+  .sc-contracts td {
+    border: 1px solid var(--border);
+    padding: 3px 4px;
+    text-align: center;
+    background: var(--surface);
+    color: var(--text);
+    vertical-align: middle;
+  }
+  .sc-contracts td.deal { color: var(--green); font-weight: 600; text-align: right; }
+  .sc-contracts tr:last-child td { background: #f0faf4; }
+  .sc-contracts th:last-child { text-align: right; }
+
+  /* NOTE BOX */
+  .note-box {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .note-box strong { color: var(--accent); }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* TABS */
+  .tab-nav {
+    display: flex;
+    gap: 0;
+    margin-bottom: 28px;
+    border-bottom: 2px solid var(--border);
+    animation: fadeUp 0.5s ease both;
+  }
+  .tab-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* PERFORMANCE */
+  .perf-kpis {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .perf-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    border-top: 3px solid var(--c, var(--accent));
+  }
+  .perf-card .pk-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .perf-card .pk-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--text);
+  }
+  .perf-card .pk-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .perf-card .pk-history {
+    margin-top: 8px;
+    padding-top: 7px;
+    border-top: 1px dashed var(--border);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .pk-history .ph-old { text-decoration: line-through; opacity: .55; }
+  .ph-arrow { color: #16a34a; font-weight: 700; }
+  .ph-new { color: #16a34a; font-weight: 700; }
+
+  /* PIE CHART */
+  .chart-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+  .chart-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .chart-center-label {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+  }
+  .chart-total {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--text);
+  }
+  .chart-total-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-top: 3px;
+  }
+  .chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-content: center;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text);
+    min-width: 180px;
+  }
+  .legend-dot-pie {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-pct {
+    color: var(--text-muted);
+    font-size: 10px;
+    margin-left: 2px;
+  }
+
+  /* STATUS BREAKDOWN */
+  .status-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .status-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .status-panel h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--bg);
+    font-size: 12px;
+  }
+  .status-row:last-child { border-bottom: none; }
+  .status-left { display: flex; align-items: center; gap: 8px; }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .status-name { color: var(--text); }
+  .status-badge-count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    min-width: 28px;
+    text-align: center;
+  }
+
+  /* DEAL SPREAD TABLE */
+  .deal-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+  .deal-section-header {
+    padding: 14px 16px;
+    background: var(--surface2);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .deal-section-header .total-spread {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--green);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .deal-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .deal-table th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 10px 14px;
+    text-align: left;
+    background: var(--surface2);
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+  .deal-table th.th-r { text-align: right; }
+  .deal-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .deal-table tr:last-child td { border-bottom: none; }
+  .deal-table tr:hover td { background: #faf9f7; }
+  .deal-table .spread-val { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 700; color: var(--green); text-align: right; }
+  .deal-table .status-chip {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+  .chip-signed { background: var(--green-light); color: var(--green); }
+  .chip-connected { background: var(--blue-light); color: var(--blue); }
+  .chip-offer { background: #fff3cd; color: #856404; }
+  .chip-comping { background: var(--me-light); color: var(--me); }
+
+
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media(max-width:700px){
+    .cards { grid-template-columns: 1fr 1fr; }
+    .scenarios { grid-template-columns: 1fr 1fr; }
+    .header { flex-direction: column; }
+    .header-right { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="label">PH Goldsoil Inc. · The Acre Deal</div>
+      <h1>Neutral Letter Campaign<br>Schedule & Forecast</h1>
+    </div>
+    <div class="header-right">
+      Feb 12 – Mar 27, 2026<br>
+      Maryland · South Carolina · Maine · Michigan<br>
+      Updated: Mar 6, 2026
+    </div>
+  </div>
+
+  <!-- TAB NAV -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('schedule')">📋 Schedule & Forecast</button>
+    <button class="tab-btn" onclick="switchTab('performance')">📊 Campaign Performance</button>
+  </div>
+
+  <!-- TAB: SCHEDULE & FORECAST -->
+  <div class="tab-panel active" id="tab-schedule">
+  <div class="cards">
+    <div class="card" style="--c:#e05c1a;">
+      <div class="card-label">Total Campaign Mailers</div>
+      <div class="card-value">50,046</div>
+      <div class="card-sub">Across 17 batches · 4 states</div>
+    </div>
+    <div class="card" style="--c:#6b7280;">
+      <div class="card-label">Full Campaign Cost</div>
+      <div class="card-value">$30,797</div>
+      <div class="card-sub">@ $0.58 all-in per piece</div>
+    </div>
+    <div class="card" style="--c:#b8601e;">
+      <div class="card-label">Upcoming Stamp Payments</div>
+      <div class="card-value">$7,595</div>
+      <div class="card-sub">ME · SC new · MI · $0.434/pc</div>
+      <div class="card-sub2">MD & SC (B01–05) fully paid</div>
+    </div>
+    <div class="card" style="--c:#2d7d46;">
+      <div class="card-label">Current Spent</div>
+      <div class="card-value">$18,457</div>
+      <div class="card-sub">MD, SC & B06 ME stamps paid</div>
+      <div class="card-sub2">of $30,797 total</div>
+    </div>
+    <div class="card" style="--c:#5b3e9e;">
+      <div class="card-label">Active Batches</div>
+      <div class="card-value">14</div>
+      <div class="card-sub">Feb 12 – Mar 27 send dates</div>
+    </div>
+  </div>
+
+  <!-- INVENTORY BANNER -->
+  <div class="inventory-banner">
+    <div class="inv-item">
+      <div class="inv-label">Letters & Envelopes Purchased</div>
+      <div class="inv-value">100,000</div>
+      <div class="inv-sub">Total inventory · $14,618.00 paid</div>
+    </div>
+    <div class="inv-divider"></div>
+    <div class="inv-item">
+      <div class="inv-label">Used This Campaign</div>
+      <div class="inv-value used">50,046</div>
+      <div class="inv-sub">Feb 12 – Mar 27, 2026</div>
+    </div>
+    <div class="inv-divider"></div>
+    <div class="inv-item">
+      <div class="inv-label">Remaining Inventory</div>
+      <div class="inv-value remaining">49,954</div>
+      <div class="inv-sub">Ready for future campaigns</div>
+    </div>
+    <div class="inv-divider"></div>
+    <div class="inv-item">
+      <div class="inv-label">Cost Per Letter/Env.</div>
+      <div class="inv-value">$0.146</div>
+      <div class="inv-sub">$14,618 ÷ 100,000 units</div>
+    </div>
+  </div>
+
+  <!-- SCHEDULE TABLE -->
+  <div class="section-title">Mail Schedule</div>
+  <div class="table-wrap">
+    <table style="table-layout:fixed; width:100%;">
+      <colgroup>
+        <col style="width:40px;">
+        <col style="width:90px;">
+        <col style="width:90px;">
+        <col style="width:65px;">
+        <col style="width:80px;">
+        <col style="width:110px;">
+        <col style="width:95px;">
+        <col style="width:95px;">
+        <col style="width:115px;">
+        <col style="width:90px;">
+        <col style="width:90px;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="th-center">Batch</th>
+          <th>Send Date</th>
+          <th>State</th>
+          <th class="th-right">Members</th>
+          <th>Postage</th>
+          <th>Template Used</th>
+          <th>Shipment Status</th>
+          <th>Est. Mailbox Date</th>
+          <th>Est. Receiving Seller Calls</th>
+          <th class="cost-group-header">Full Cost<br>($0.58)</th>
+          <th class="cost-group-header">Stamps Only<br>($0.434)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- FEBRUARY DIVIDER -->
+        <tr>
+          <td colspan="11" style="background:#f5f4f0; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border-top:2px solid var(--border);">FEBRUARY 2026</td>
+        </tr>
+        <tr>
+          <td class="mono">01</td>
+          <td>Feb 12, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1e40af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Anshul</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">02</td>
+          <td>Feb 16, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1e40af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Anshul</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">03</td>
+          <td>Feb 20, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,546</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1e40af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Anshul</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,476.68</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">04</td>
+          <td>Feb 26, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#fce7f3;color:#9d174d;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Whitney</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <!-- FEB SUBTOTAL -->
+        <tr style="background:#f9f9f7; border-top:1px solid var(--border);">
+          <td colspan="3" style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-muted); padding:8px 14px; font-weight:700;">FEB SUBTOTAL</td>
+          <td style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:700; text-align:right; padding:8px 14px;">10,046</td>
+          <td></td><td></td><td></td><td></td><td></td>
+          <td class="cost-full" style="font-weight:700;">$5,826.68</td>
+          <td class="cost-paid" style="font-size:11px;">All Paid ✓</td>
+        </tr>
+        <!-- MARCH DIVIDER -->
+        <tr>
+          <td colspan="11" style="background:#f5f4f0; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border-top:2px solid var(--border);">MARCH 2026</td>
+        </tr>
+        <tr>
+          <td class="mono">05</td>
+          <td>Mar 3, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#fce7f3;color:#9d174d;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Whitney</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag estimated">Est. Mar 17</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">06</td>
+          <td>Mar 11, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dcfce7;color:#166534;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Alex</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 20</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">07</td>
+          <td>Mar 12, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#fce7f3;color:#9d174d;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Whitney</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td><span class="status-tag estimated">Est. Mar 28</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">08</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">5,000</td>
+          <td><span style="background:#fff3cd;color:#856404;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">First Class</span></td>
+          <td><span style="background:#dcfce7;color:#166534;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Alex</span> <span style="background:#fce7f3;color:#9d174d;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Whitney</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 18</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td class="cost-full">$4,080.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">09</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#fff3cd;color:#856404;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">First Class</span></td>
+          <td><span style="background:#dcfce7;color:#166534;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Alex</span> <span style="background:#fce7f3;color:#9d174d;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Whitney</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 18</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td class="cost-full">$2,040.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">10</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dcfce7;color:#166534;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Alex</span> <span style="background:#fce7f3;color:#9d174d;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Whitney</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td><span class="status-tag estimated">Est. Mar 30</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">11</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">5,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dcfce7;color:#166534;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Alex</span> <span style="background:#fce7f3;color:#9d174d;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Whitney</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td><span class="status-tag estimated">Est. Mar 30</span></td>
+          <td class="cost-full">$2,900.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">12</td>
+          <td>Mar 18, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:10px;">—</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 27</span></td>
+          <td><span class="status-tag estimated">Est. Apr 1</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">13</td>
+          <td>Mar 19, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:10px;">—</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 28</span></td>
+          <td><span class="status-tag estimated">Est. Apr 2</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">14</td>
+          <td>Mar 20, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:10px;">—</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 31</span></td>
+          <td><span class="status-tag estimated">Est. Apr 5</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">15</td>
+          <td>Mar 23, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:10px;">—</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 1</span></td>
+          <td><span class="status-tag estimated">Est. Apr 6</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">16</td>
+          <td>Mar 25, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:10px;">—</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 3</span></td>
+          <td><span class="status-tag estimated">Est. Apr 8</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">17</td>
+          <td>Mar 27, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:10px;">—</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 7</span></td>
+          <td><span class="status-tag estimated">Est. Apr 12</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="tf-label"><strong>MAR TOTAL</strong></td>
+          <td class="tf-count"><strong>40,000</strong></td>
+          <td colspan="5"></td>
+          <td class="tf-full">$24,970.00</td>
+          <td class="tf-remaining">$7,595.00 — Upcoming Stamp Payments</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div class="cost-legend">
+    <span><span class="legend-dot" style="background:#d4b89a;"></span>Full Cost = postage + paper + envelope ($0.58/piece)</span>
+    <span><span class="legend-dot" style="background:var(--accent);"></span>Stamps Only = $0.434/piece · MD & SC (B01–05) fully paid · ME, SC new, MI upcoming = <strong>$16,960</strong></span>
+    <span><span class="legend-dot" style="background:#4a90d9;"></span>Mailbox dates estimated using <strong>7 business days</strong> from send date</span>
+  </div>
+
+  <!-- STATE BREAKDOWN -->
+  <div class="state-section">
+    <div class="section-title">Volume by State</div>
+    <div class="state-bars">
+      <div class="state-row">
+        <div class="state-label"><span class="dot" style="background:var(--md)"></span>Maryland</div>
+        <div class="bar-track"><div class="bar-fill" style="width:15.1%; background:var(--md);"></div></div>
+        <div class="state-count">7,546</div>
+      </div>
+      <div class="state-row">
+        <div class="state-label"><span class="dot" style="background:var(--sc)"></span>S. Carolina</div>
+        <div class="bar-track"><div class="bar-fill" style="width:20.0%; background:var(--sc);"></div></div>
+        <div class="state-count">10,000</div>
+      </div>
+      <div class="state-row">
+        <div class="state-label"><span class="dot" style="background:var(--me)"></span>Maine</div>
+        <div class="bar-track"><div class="bar-fill" style="width:24.9%; background:var(--me);"></div></div>
+        <div class="state-count">12,500</div>
+      </div>
+      <div class="state-row">
+        <div class="state-label"><span class="dot" style="background:#2563eb"></span>Michigan</div>
+        <div class="bar-track"><div class="bar-fill" style="width:22.0%; background:#2563eb;"></div></div>
+        <div class="state-count">11,000</div>
+      </div>
+      <div class="state-row">
+        <div class="state-label"><span class="dot" style="background:#9d174d"></span>New York</div>
+        <div class="bar-track"><div class="bar-fill" style="width:18.0%; background:#9d174d;"></div></div>
+        <div class="state-count">9,000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORECAST SCENARIOS -->
+  <div class="forecast-section">
+    <div class="section-title">February 2026 — Response & Lead Forecast · Scenario Analysis</div>
+    <div class="forecast-intro">
+      Based on <strong>10,046 February mailers</strong> &nbsp;·&nbsp; <strong>70% quality lead conversion</strong> (from actual call data: ~30% rejection rate) &nbsp;·&nbsp; Contract conversion at <strong>8%, 10%, 12%</strong> &nbsp;·&nbsp; Avg. deal spread: <strong>$25,000</strong>
+    </div>
+
+    <div class="scenarios">
+
+      <!-- 0.45% -->
+      <div class="scenario-card sc-a">
+        <div class="sc-tag">Low</div>
+        <div class="sc-rate">0.45%</div>
+        <div class="sc-rate-label">Response Rate</div>
+        <div class="sc-funnel">
+          <div class="sc-step">
+            <div class="sc-step-label">Mailers Sent</div>
+            <div class="sc-step-val">10,046</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step">
+            <div class="sc-step-label">Est. Responses</div>
+            <div class="sc-step-val">45</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl">
+            <div class="sc-step-label">Quality Leads (70%)</div>
+            <div class="sc-step-val v-accent">31</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl2">
+            <div class="sc-step-label">Signed Contracts</div>
+            <div class="sc-step-val v-green">2–4</div>
+          </div>
+        </div>
+        <table class="sc-contracts">
+          <tr><th>Conv.</th><th>Deals</th><th>Deal Spread</th></tr>
+          <tr><td>8%</td><td>2</td><td class="deal">$50k</td></tr>
+          <tr><td>10%</td><td>3</td><td class="deal">$75k</td></tr>
+          <tr><td>12%</td><td>4</td><td class="deal">$100k</td></tr>
+        </table>
+      </div>
+
+      <!-- 0.55% -->
+      <div class="scenario-card sc-b">
+        <div class="sc-tag">Conservative</div>
+        <div class="sc-rate">0.55%</div>
+        <div class="sc-rate-label">Response Rate</div>
+        <div class="sc-funnel">
+          <div class="sc-step">
+            <div class="sc-step-label">Mailers Sent</div>
+            <div class="sc-step-val">10,046</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step">
+            <div class="sc-step-label">Est. Responses</div>
+            <div class="sc-step-val">55</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl">
+            <div class="sc-step-label">Quality Leads (70%)</div>
+            <div class="sc-step-val v-accent">38</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl2">
+            <div class="sc-step-label">Signed Contracts</div>
+            <div class="sc-step-val v-green">3–5</div>
+          </div>
+        </div>
+        <table class="sc-contracts">
+          <tr><th>Conv.</th><th>Deals</th><th>Deal Spread</th></tr>
+          <tr><td>8%</td><td>3</td><td class="deal">$75k</td></tr>
+          <tr><td>10%</td><td>4</td><td class="deal">$95k</td></tr>
+          <tr><td>12%</td><td>5</td><td class="deal">$114k</td></tr>
+        </table>
+      </div>
+
+      <!-- 0.60% -->
+      <div class="scenario-card sc-c">
+        <div class="sc-tag">Moderate</div>
+        <div class="sc-rate">0.60%</div>
+        <div class="sc-rate-label">Response Rate</div>
+        <div class="sc-funnel">
+          <div class="sc-step">
+            <div class="sc-step-label">Mailers Sent</div>
+            <div class="sc-step-val">10,046</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step">
+            <div class="sc-step-label">Est. Responses</div>
+            <div class="sc-step-val">60</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl">
+            <div class="sc-step-label">Quality Leads (70%)</div>
+            <div class="sc-step-val v-accent">42</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl2">
+            <div class="sc-step-label">Signed Contracts</div>
+            <div class="sc-step-val v-green">3–5</div>
+          </div>
+        </div>
+        <table class="sc-contracts">
+          <tr><th>Conv.</th><th>Deals</th><th>Deal Spread</th></tr>
+          <tr><td>8%</td><td>3</td><td class="deal">$84k</td></tr>
+          <tr><td>10%</td><td>4</td><td class="deal">$105k</td></tr>
+          <tr><td>12%</td><td>5</td><td class="deal">$126k</td></tr>
+        </table>
+      </div>
+
+      <!-- 0.65% -->
+      <div class="scenario-card sc-d">
+        <div class="sc-tag">Optimistic</div>
+        <div class="sc-rate">0.65%</div>
+        <div class="sc-rate-label">Response Rate</div>
+        <div class="sc-funnel">
+          <div class="sc-step">
+            <div class="sc-step-label">Mailers Sent</div>
+            <div class="sc-step-val">10,046</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step">
+            <div class="sc-step-label">Est. Responses</div>
+            <div class="sc-step-val">65</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl">
+            <div class="sc-step-label">Quality Leads (70%)</div>
+            <div class="sc-step-val v-accent">46</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl2">
+            <div class="sc-step-label">Signed Contracts</div>
+            <div class="sc-step-val v-green">4–6</div>
+          </div>
+        </div>
+        <table class="sc-contracts">
+          <tr><th>Conv.</th><th>Deals</th><th>Deal Spread</th></tr>
+          <tr><td>8%</td><td>4</td><td class="deal">$92k</td></tr>
+          <tr><td>10%</td><td>5</td><td class="deal">$115k</td></tr>
+          <tr><td>12%</td><td>6</td><td class="deal">$138k</td></tr>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="note-box">
+      <strong>February Insight:</strong> At moderate 0.60% response + 10% conversion → <strong>4 deals · $105k deal spread</strong> from 10,046 mailers. &nbsp;·&nbsp;
+      <strong>Note:</strong> Quality lead rate of 70% is based on actual Maryland call data (~30% rejection). Current actual response rate is <strong>0.45%</strong> (34 calls ÷ 7,546 MD delivered).
+    </div>
+  </div>
+
+  <!-- MARCH 30K FORECAST -->
+  <div class="forecast-section">
+    <div class="section-title">March 2026 — Response & Lead Forecast · Scenario Analysis</div>
+    <div class="forecast-intro">
+      Based on <strong>22,500 mailers</strong> (Batches 05–11 · sellers expected to call this March) &nbsp;·&nbsp; Stamps cost: <strong>$11,535</strong> (paper & envelopes already paid from 100k inventory) &nbsp;·&nbsp; <strong>2.94% conversion rate</strong> (1 signed ÷ 34 responses) &nbsp;·&nbsp; <strong>$25,000 avg deal spread</strong>
+    </div>
+
+    <div class="scenarios">
+
+      <!-- 0.45% -->
+      <div class="scenario-card sc-a">
+        <div class="sc-tag">Low</div>
+        <div class="sc-rate">0.45%</div>
+        <div class="sc-rate-label">Response Rate</div>
+        <div class="sc-funnel">
+          <div class="sc-step">
+            <div class="sc-step-label">Mailers Sent</div>
+            <div class="sc-step-val">22,500</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step">
+            <div class="sc-step-label">Est. Responses</div>
+            <div class="sc-step-val">101</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl2">
+            <div class="sc-step-label">Signed Contracts (2.94%)</div>
+            <div class="sc-step-val v-green">3</div>
+          </div>
+        </div>
+        <div class="sc-cpl" style="margin-top:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--green); font-weight:700; text-align:center;">$75,000 deal spread</div>
+      </div>
+
+      <!-- 0.55% -->
+      <div class="scenario-card sc-b">
+        <div class="sc-tag">Conservative</div>
+        <div class="sc-rate">0.55%</div>
+        <div class="sc-rate-label">Response Rate</div>
+        <div class="sc-funnel">
+          <div class="sc-step">
+            <div class="sc-step-label">Mailers Sent</div>
+            <div class="sc-step-val">22,500</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step">
+            <div class="sc-step-label">Est. Responses</div>
+            <div class="sc-step-val">124</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl2">
+            <div class="sc-step-label">Signed Contracts (2.94%)</div>
+            <div class="sc-step-val v-green">4</div>
+          </div>
+        </div>
+        <div class="sc-cpl" style="margin-top:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--green); font-weight:700; text-align:center;">$100,000 deal spread</div>
+      </div>
+
+      <!-- 0.60% -->
+      <div class="scenario-card sc-c">
+        <div class="sc-tag">Moderate</div>
+        <div class="sc-rate">0.60%</div>
+        <div class="sc-rate-label">Response Rate</div>
+        <div class="sc-funnel">
+          <div class="sc-step">
+            <div class="sc-step-label">Mailers Sent</div>
+            <div class="sc-step-val">22,500</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step">
+            <div class="sc-step-label">Est. Responses</div>
+            <div class="sc-step-val">135</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl2">
+            <div class="sc-step-label">Signed Contracts (2.94%)</div>
+            <div class="sc-step-val v-green">4</div>
+          </div>
+        </div>
+        <div class="sc-cpl" style="margin-top:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--green); font-weight:700; text-align:center;">$100,000 deal spread</div>
+      </div>
+
+      <!-- 0.65% -->
+      <div class="scenario-card sc-d">
+        <div class="sc-tag">Optimistic</div>
+        <div class="sc-rate">0.65%</div>
+        <div class="sc-rate-label">Response Rate</div>
+        <div class="sc-funnel">
+          <div class="sc-step">
+            <div class="sc-step-label">Mailers Sent</div>
+            <div class="sc-step-val">22,500</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step">
+            <div class="sc-step-label">Est. Responses</div>
+            <div class="sc-step-val">146</div>
+          </div>
+          <div class="sc-arrow">↓</div>
+          <div class="sc-step hl2">
+            <div class="sc-step-label">Signed Contracts (2.94%)</div>
+            <div class="sc-step-val v-green">4</div>
+          </div>
+        </div>
+        <div class="sc-cpl" style="margin-top:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--green); font-weight:700; text-align:center;">$100,000 deal spread</div>
+      </div>
+
+    </div>
+
+    <div class="note-box">
+      <strong>March Projection:</strong> Based on Batches 05–11 (22,500 mailers) — the campaigns expected to generate seller calls this March. Uses actual 2.94% conversion rate (1 signed ÷ 34 responses). At moderate 0.60% response rate → <strong>4 contracts · $100k deal spread</strong>. Best case (0.65%) → <strong>4 contracts · $100k deal spread</strong> for <strong>$11,535 in stamps</strong>. &nbsp;·&nbsp; Batches 12–17 responses will roll into April.
+    </div>
+  </div>
+
+  </div><!-- end tab-schedule -->
+
+  <!-- TAB: CAMPAIGN PERFORMANCE -->
+  <div class="tab-panel" id="tab-performance">
+    <!-- STATE SELECTOR -->
+    <div style="display:flex; gap:10px; margin-bottom:24px; align-items:center; flex-wrap:wrap;">
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:var(--text-muted); letter-spacing:.08em; text-transform:uppercase;">View by State:</span>
+      <button class="state-toggle-btn active" id="btn-md" onclick="switchState('md')" style="--sbg:#1d5fa8;">
+        <span class="dot" style="background:#1d5fa8; width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:6px;"></span>Maryland
+      </button>
+      <button class="state-toggle-btn" id="btn-sc" onclick="switchState('sc')" style="--sbg:#b8601e;">
+        <span class="dot" style="background:#b8601e; width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:6px;"></span>South Carolina
+      </button>
+    </div>
+
+    <!-- MARYLAND -->
+    <div id="state-md">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:#1d5fa8; letter-spacing:.1em; text-transform:uppercase; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid #1d5fa8;">
+        ▸ Maryland · Batches 01–03 · 7,546 Delivered
+      </div>
+      <div class="perf-kpis">
+        <div class="perf-card" style="--c:#1d5fa8;"><div class="pk-label">Campaign Members Delivered</div><div class="pk-value">7,546</div><div class="pk-sub">Maryland · Batches 01–03</div></div>
+        <div class="perf-card" style="--c:#1d5fa8;"><div class="pk-label">Total Calls Generated</div><div class="pk-value">39</div><div class="pk-sub">From Maryland mailers</div></div>
+        <div class="perf-card" style="--c:#5b3e9e;"><div class="pk-label">Actual Response Rate</div><div class="pk-value">0.52%</div><div class="pk-sub">39 calls ÷ 7,546 delivered</div></div>
+        <div class="perf-card" style="--c:#2d7d46;"><div class="pk-label">Active Pipeline Deal Spread</div><div class="pk-value">$320,000</div><div class="pk-sub">4 active leads</div></div>
+        <div class="perf-card" style="--c:#16a34a;"><div class="pk-label">Signed Contracts</div><div class="pk-value">1</div><div class="pk-sub">Nosratollah · $55,000</div></div>
+        <div class="perf-card" style="--c:#b8601e;"><div class="pk-label">Conversion Rate</div><div class="pk-value">2.56%</div><div class="pk-sub">1 signed ÷ 39 responses</div></div>
+        <div class="perf-card" style="--c:#856404;"><div class="pk-label">Initial Offer Pipeline</div><div class="pk-value">1</div><div class="pk-sub">Livio Fiorio · $58,000</div></div>
+        <div class="perf-card" style="--c:#5b3e9e;"><div class="pk-label">Sent for Comps</div><div class="pk-value">1</div><div class="pk-sub">Quentin Glenn</div></div>
+        <div class="perf-card" style="--c:#0891b2;"><div class="pk-label">Cost Per Call</div><div class="pk-value">$112</div><div class="pk-sub">$4,377 MD spend ÷ 39 calls</div></div>
+        <div class="perf-card" style="--c:#f59e0b;"><div class="pk-label">Nurture Pipeline</div><div class="pk-value">13</div><div class="pk-sub">Price misalignment / Asking high</div></div>
+      </div>
+
+      <div class="chart-row">
+        <div class="chart-wrap">
+          <canvas id="pie-md" width="240" height="240"></canvas>
+          <div class="chart-center-label"><div class="chart-total">39</div><div class="chart-total-sub">Total Calls</div></div>
+        </div>
+        <div class="chart-legend" id="legend-md"></div>
+      </div>
+
+      <div class="status-section">
+        <div class="status-panel">
+          <h3>✅ Signed (1)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#16a34a"></span><span class="status-name">Nosratollah Mossavari</span></div><span class="status-badge-count" style="background:#dcfce7;color:#16a34a;">Signed · $55,000 · 2/23</span></div>
+
+          <h3 style="margin-top:16px;">🔥 Active Pipeline (4)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#1d5fa8"></span><span class="status-name">Donna Knight</span></div><span class="status-badge-count" style="background:#dbeafe;color:#1d5fa8;">Deal in Progress · $95,000 · Whitney</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#1d5fa8"></span><span class="status-name">Robert Cromer</span></div><span class="status-badge-count" style="background:#dbeafe;color:#1d5fa8;">Sent for Sign (Email) · $60,000 · Alex</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#1d5fa8"></span><span class="status-name">James Grove</span></div><span class="status-badge-count" style="background:#dbeafe;color:#1d5fa8;">Objection Handling · $110,000 · Whitney</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#1d5fa8"></span><span class="status-name">Kit Suthard</span></div><span class="status-badge-count" style="background:#dbeafe;color:#1d5fa8;">Price Negotiation · $55,000 · Whitney</span></div>
+
+          <h3 style="margin-top:16px;">📋 Initial Offer (1)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#d97706"></span><span class="status-name">Livio Fiorio</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Ready · $58,000 · Whitney · 2/20</span></div>
+
+          <h3 style="margin-top:16px;">📊 Sent for Comps (1)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#5b3e9e"></span><span class="status-name">Quentin Glenn</span></div><span class="status-badge-count" style="background:#ede9fe;color:#5b3e9e;">Sent for Comps · Whitney · 3/4</span></div>
+
+          <h3 style="margin-top:16px;">🔵 Gathering Info / FUP (2)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#6366f1"></span><span class="status-name">Unknown · Whitney</span></div><span class="status-badge-count" style="background:#eef2ff;color:#6366f1;">Need to FUP · 3/9</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#6366f1"></span><span class="status-name">Unknown · Whitney</span></div><span class="status-badge-count" style="background:#eef2ff;color:#6366f1;">Need to FUP · 3/12</span></div>
+
+          <h3 style="margin-top:16px;">⚫ Connected – No Deal (2)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#64748b"></span><span class="status-name">Towering Oaks Estate LLC</span></div><span class="status-badge-count" style="background:#f1f5f9;color:#64748b;">Didn't Land It · Alex · 2/27</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#64748b"></span><span class="status-name">Glendora Horine / Richard Wolford</span></div><span class="status-badge-count" style="background:#f1f5f9;color:#64748b;">Not Interested Now · Whitney · 3/2</span></div>
+        </div>
+
+        <div class="status-panel">
+          <h3>📞 Missed Call / VM Left (5)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#9ca3af"></span><span class="status-name">Unknown · Alex</span></div><span class="status-badge-count" style="background:#f3f4f6;color:#6b7280;">Not picking up · 2/26</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#9ca3af"></span><span class="status-name">Unknown · Whitney</span></div><span class="status-badge-count" style="background:#f3f4f6;color:#6b7280;">VM Left · 3/2</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#9ca3af"></span><span class="status-name">Unknown · Whitney</span></div><span class="status-badge-count" style="background:#f3f4f6;color:#6b7280;">VM Left · 3/4</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#9ca3af"></span><span class="status-name">Nick Nicholson</span></div><span class="status-badge-count" style="background:#f3f4f6;color:#6b7280;">VM Left · Whitney · 3/10</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#9ca3af"></span><span class="status-name">Unknown · Whitney</span></div><span class="status-badge-count" style="background:#f3f4f6;color:#6b7280;">VM Left · 3/11</span></div>
+
+          <h3 style="margin-top:16px;">🕐 Nurture – Asking Price High (6)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">Kevin Henry</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Asking Price High · 2/20</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">Stephen Lapp</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Asking Price High · 2/21</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">David Connelly</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Asking Price High · 2/28</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">James Policicchio</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Asking Price High · 3/2</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">Gary Patel</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Price Misalignment · 3/2</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">Sundaresan Gloria</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Asking Price High · 3/3</span></div>
+
+          <h3 style="margin-top:16px;">🕐 Nurture – Price Misalignment (7)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#fb923c"></span><span class="status-name">Geoffery Wimbush</span></div><span class="status-badge-count" style="background:#ffedd5;color:#c2410c;">Price Misalignment · 2/26</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#fb923c"></span><span class="status-name">Bronz Homes Builders Inc</span></div><span class="status-badge-count" style="background:#ffedd5;color:#c2410c;">Price Misalignment · 3/3</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#fb923c"></span><span class="status-name">Stephanie Sallam</span></div><span class="status-badge-count" style="background:#ffedd5;color:#c2410c;">Price Misalignment · $76,700 · 3/4</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#fb923c"></span><span class="status-name">Greg Gannon</span></div><span class="status-badge-count" style="background:#ffedd5;color:#c2410c;">Price Misalignment · 3/4</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#fb923c"></span><span class="status-name">Sang Choi</span></div><span class="status-badge-count" style="background:#ffedd5;color:#c2410c;">Price Misalignment · 3/5</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#fb923c"></span><span class="status-name">Dorchester Lumber Company Inc</span></div><span class="status-badge-count" style="background:#ffedd5;color:#c2410c;">Price Misalignment · 3/4</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#fb923c"></span><span class="status-name">Robert Garrison</span></div><span class="status-badge-count" style="background:#ffedd5;color:#c2410c;">Price Misalignment · 3/5</span></div>
+
+          <h3 style="margin-top:16px;">🚫 Not Interested / DNC (7)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#ef4444"></span><span class="status-name">Harvey Smith</span></div><span class="status-badge-count" style="background:#fee2e2;color:#ef4444;">Not Interested – DNC · 2/20</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#ef4444"></span><span class="status-name">Kevin Smith</span></div><span class="status-badge-count" style="background:#fee2e2;color:#ef4444;">Inactive – DNC · 2/20</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#ef4444"></span><span class="status-name">Unknown · Whitney (×3)</span></div><span class="status-badge-count" style="background:#fee2e2;color:#ef4444;">Not Interested – DNC</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#ef4444"></span><span class="status-name">joseph c brown</span></div><span class="status-badge-count" style="background:#fee2e2;color:#ef4444;">Inactive – DNC · 3/3</span></div>
+
+          <h3 style="margin-top:16px;">❌ Rejected – Property Problem (3)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#dc2626"></span><span class="status-name">Geo Richardson</span></div><span class="status-badge-count" style="background:#fee2e2;color:#dc2626;">Asking Price High · 2/20</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#dc2626"></span><span class="status-name">Olson Mildred W Living Trust</span></div><span class="status-badge-count" style="background:#fee2e2;color:#dc2626;">Wetland · Alex · 2/23</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#dc2626"></span><span class="status-name">Jocelyn Orr-Thompson</span></div><span class="status-badge-count" style="background:#fee2e2;color:#dc2626;">Property Not Buildable · 2/28</span></div>
+
+          <div style="margin-top:16px; padding:12px; background:var(--surface2); border-radius:6px; font-size:11px; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; line-height:1.9;">
+            <strong style="color:var(--text);">Total: 39 calls</strong><br>
+            <strong style="color:#16a34a;">✅ Signed:</strong> 1 &nbsp;·&nbsp; <strong style="color:#1d5fa8;">🔥 Active:</strong> 4<br>
+            <strong style="color:#d97706;">📋 Initial Offer:</strong> 1 &nbsp;·&nbsp; <strong style="color:#5b3e9e;">📊 Comps:</strong> 1<br>
+            <strong style="color:#6366f1;">🔵 FUP:</strong> 2 &nbsp;·&nbsp; <strong style="color:#64748b;">⚫ No Deal:</strong> 2<br>
+            <strong style="color:#9ca3af;">📞 Missed/VM:</strong> 5 &nbsp;·&nbsp; <strong style="color:#f59e0b;">🕐 Nurture:</strong> 13<br>
+            <strong style="color:#ef4444;">🚫 Not Int/DNC:</strong> 7 &nbsp;·&nbsp; <strong style="color:#dc2626;">❌ Rejected:</strong> 3
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-section" style="margin-top:24px; margin-bottom:16px;">
+        <div class="deal-section-header"><span>🔥 Active Pipeline</span><span class="total-spread">$320,000 potential</span></div>
+        <table class="deal-table">
+          <thead><tr><th>Seller</th><th>Closer</th><th>Stage</th><th>Date</th><th class="th-r">Deal Spread</th></tr></thead>
+          <tbody>
+        <!-- FEBRUARY DIVIDER -->
+        <tr>
+          <td colspan="11" style="background:#f5f4f0; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border-top:2px solid var(--border);">FEBRUARY 2026</td>
+        </tr>
+        <tr>
+          <td class="mono">01</td>
+          <td>Feb 12, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">02</td>
+          <td>Feb 16, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">03</td>
+          <td>Feb 20, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,546</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,476.68</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">04</td>
+          <td>Feb 26, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <!-- FEB SUBTOTAL -->
+        <tr style="background:#f9f9f7; border-top:1px solid var(--border);">
+          <td colspan="3" style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-muted); padding:8px 14px; font-weight:700;">FEB SUBTOTAL</td>
+          <td style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:700; text-align:right; padding:8px 14px;">10,046</td>
+          <td></td><td></td><td></td><td></td><td></td>
+          <td class="cost-full" style="font-weight:700;">$5,826.68</td>
+          <td class="cost-paid" style="font-size:11px;">All Paid ✓</td>
+        </tr>
+        <!-- MARCH DIVIDER -->
+        <tr>
+          <td colspan="11" style="background:#f5f4f0; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border-top:2px solid var(--border);">MARCH 2026</td>
+        </tr>
+        <tr>
+          <td class="mono">05</td>
+          <td>Mar 3, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag estimated">Est. Mar 17</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">06</td>
+          <td>Mar 11, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 20</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">07</td>
+          <td>Mar 12, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td><span class="status-tag estimated">Est. Mar 28</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">08</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">5,000</td>
+          <td><span style="background:#fff3cd;color:#856404;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">First Class</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 18</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td class="cost-full">$4,080.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">09</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#fff3cd;color:#856404;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">First Class</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 18</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td class="cost-full">$2,040.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">10</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td><span class="status-tag estimated">Est. Mar 30</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">11</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">5,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td><span class="status-tag estimated">Est. Mar 30</span></td>
+          <td class="cost-full">$2,900.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">12</td>
+          <td>Mar 18, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 27</span></td>
+          <td><span class="status-tag estimated">Est. Apr 1</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">13</td>
+          <td>Mar 19, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 28</span></td>
+          <td><span class="status-tag estimated">Est. Apr 2</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">14</td>
+          <td>Mar 20, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 31</span></td>
+          <td><span class="status-tag estimated">Est. Apr 5</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">15</td>
+          <td>Mar 23, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 1</span></td>
+          <td><span class="status-tag estimated">Est. Apr 6</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">16</td>
+          <td>Mar 25, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 3</span></td>
+          <td><span class="status-tag estimated">Est. Apr 8</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">17</td>
+          <td>Mar 27, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 7</span></td>
+          <td><span class="status-tag estimated">Est. Apr 12</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+      </tbody>
+        </table>
+      </div>
+
+      <div class="deal-section" style="margin-bottom:16px;">
+        <div class="deal-section-header" style="background:#f0fdf4; border-bottom:1px solid #bbf7d0;"><span style="color:#16a34a;">✅ Signed Contracts</span><span class="total-spread" style="color:#16a34a;">$55,000</span></div>
+        <table class="deal-table">
+          <thead><tr><th>Seller</th><th>Closer</th><th>Stage</th><th>Date</th><th class="th-r">Deal Spread</th></tr></thead>
+          <tbody>
+        <!-- FEBRUARY DIVIDER -->
+        <tr>
+          <td colspan="11" style="background:#f5f4f0; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border-top:2px solid var(--border);">FEBRUARY 2026</td>
+        </tr>
+        <tr>
+          <td class="mono">01</td>
+          <td>Feb 12, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">02</td>
+          <td>Feb 16, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">03</td>
+          <td>Feb 20, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,546</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,476.68</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">04</td>
+          <td>Feb 26, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <!-- FEB SUBTOTAL -->
+        <tr style="background:#f9f9f7; border-top:1px solid var(--border);">
+          <td colspan="3" style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-muted); padding:8px 14px; font-weight:700;">FEB SUBTOTAL</td>
+          <td style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:700; text-align:right; padding:8px 14px;">10,046</td>
+          <td></td><td></td><td></td><td></td><td></td>
+          <td class="cost-full" style="font-weight:700;">$5,826.68</td>
+          <td class="cost-paid" style="font-size:11px;">All Paid ✓</td>
+        </tr>
+        <!-- MARCH DIVIDER -->
+        <tr>
+          <td colspan="11" style="background:#f5f4f0; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border-top:2px solid var(--border);">MARCH 2026</td>
+        </tr>
+        <tr>
+          <td class="mono">05</td>
+          <td>Mar 3, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag estimated">Est. Mar 17</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">06</td>
+          <td>Mar 11, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 20</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">07</td>
+          <td>Mar 12, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td><span class="status-tag estimated">Est. Mar 28</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">08</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">5,000</td>
+          <td><span style="background:#fff3cd;color:#856404;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">First Class</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 18</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td class="cost-full">$4,080.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">09</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#fff3cd;color:#856404;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">First Class</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 18</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td class="cost-full">$2,040.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">10</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td><span class="status-tag estimated">Est. Mar 30</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">11</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">5,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td><span class="status-tag estimated">Est. Mar 30</span></td>
+          <td class="cost-full">$2,900.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">12</td>
+          <td>Mar 18, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 27</span></td>
+          <td><span class="status-tag estimated">Est. Apr 1</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">13</td>
+          <td>Mar 19, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 28</span></td>
+          <td><span class="status-tag estimated">Est. Apr 2</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">14</td>
+          <td>Mar 20, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 31</span></td>
+          <td><span class="status-tag estimated">Est. Apr 5</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">15</td>
+          <td>Mar 23, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 1</span></td>
+          <td><span class="status-tag estimated">Est. Apr 6</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">16</td>
+          <td>Mar 25, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 3</span></td>
+          <td><span class="status-tag estimated">Est. Apr 8</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">17</td>
+          <td>Mar 27, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 7</span></td>
+          <td><span class="status-tag estimated">Est. Apr 12</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+      </tbody>
+        </table>
+      </div>
+
+      <div class="deal-section" style="margin-bottom:16px;">
+        <div class="deal-section-header" style="background:#fef9ee; border-bottom:1px solid #f0d98a;"><span style="color:#856404;">📋 Initial Offer Pipeline</span><span class="total-spread" style="color:#856404;">$58,000 potential</span></div>
+        <table class="deal-table">
+          <thead><tr><th>Seller</th><th>Closer</th><th>Stage</th><th>Date</th><th class="th-r">Deal Spread</th></tr></thead>
+          <tbody>
+        <!-- FEBRUARY DIVIDER -->
+        <tr>
+          <td colspan="11" style="background:#f5f4f0; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border-top:2px solid var(--border);">FEBRUARY 2026</td>
+        </tr>
+        <tr>
+          <td class="mono">01</td>
+          <td>Feb 12, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">02</td>
+          <td>Feb 16, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">03</td>
+          <td>Feb 20, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,546</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,476.68</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">04</td>
+          <td>Feb 26, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <!-- FEB SUBTOTAL -->
+        <tr style="background:#f9f9f7; border-top:1px solid var(--border);">
+          <td colspan="3" style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-muted); padding:8px 14px; font-weight:700;">FEB SUBTOTAL</td>
+          <td style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:700; text-align:right; padding:8px 14px;">10,046</td>
+          <td></td><td></td><td></td><td></td><td></td>
+          <td class="cost-full" style="font-weight:700;">$5,826.68</td>
+          <td class="cost-paid" style="font-size:11px;">All Paid ✓</td>
+        </tr>
+        <!-- MARCH DIVIDER -->
+        <tr>
+          <td colspan="11" style="background:#f5f4f0; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border-top:2px solid var(--border);">MARCH 2026</td>
+        </tr>
+        <tr>
+          <td class="mono">05</td>
+          <td>Mar 3, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag estimated">Est. Mar 17</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">06</td>
+          <td>Mar 11, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 20</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">07</td>
+          <td>Mar 12, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td><span class="status-tag estimated">Est. Mar 28</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">08</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">5,000</td>
+          <td><span style="background:#fff3cd;color:#856404;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">First Class</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 18</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td class="cost-full">$4,080.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">09</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#fff3cd;color:#856404;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">First Class</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 18</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td class="cost-full">$2,040.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">10</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td><span class="status-tag estimated">Est. Mar 30</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">11</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">5,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td><span class="status-tag estimated">Est. Mar 30</span></td>
+          <td class="cost-full">$2,900.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">12</td>
+          <td>Mar 18, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 27</span></td>
+          <td><span class="status-tag estimated">Est. Apr 1</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">13</td>
+          <td>Mar 19, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 28</span></td>
+          <td><span class="status-tag estimated">Est. Apr 2</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">14</td>
+          <td>Mar 20, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 31</span></td>
+          <td><span class="status-tag estimated">Est. Apr 5</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">15</td>
+          <td>Mar 23, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 1</span></td>
+          <td><span class="status-tag estimated">Est. Apr 6</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">16</td>
+          <td>Mar 25, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 3</span></td>
+          <td><span class="status-tag estimated">Est. Apr 8</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">17</td>
+          <td>Mar 27, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 7</span></td>
+          <td><span class="status-tag estimated">Est. Apr 12</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+      </tbody>
+        </table>
+      </div>
+
+    </div><!-- end state-md -->
+
+
+    <!-- SOUTH CAROLINA -->
+    <div id="state-sc" style="display:none;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:#b8601e; letter-spacing:.1em; text-transform:uppercase; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid #b8601e;">
+        ▸ South Carolina · Batch 04 · 2,500 Delivered
+      </div>
+      <div class="perf-kpis">
+        <div class="perf-card" style="--c:#b8601e;"><div class="pk-label">Campaign Members Delivered</div><div class="pk-value">2,500</div><div class="pk-sub">S. Carolina · Batch 04</div></div>
+        <div class="perf-card" style="--c:#e05c1a;"><div class="pk-label">Total Calls Generated</div><div class="pk-value">13</div><div class="pk-sub">From S. Carolina mailers</div></div>
+        <div class="perf-card" style="--c:#5b3e9e;"><div class="pk-label">Actual Response Rate</div><div class="pk-value">0.52%</div><div class="pk-sub">13 calls ÷ 2,500 delivered</div></div>
+        <div class="perf-card" style="--c:#2d7d46;"><div class="pk-label">Active Pipeline Deal Spread</div><div class="pk-value">—</div><div class="pk-sub">No active deals yet</div></div>
+        <div class="perf-card" style="--c:#16a34a;"><div class="pk-label">Signed Contracts</div><div class="pk-value">0</div><div class="pk-sub">Pipeline building</div></div>
+        <div class="perf-card" style="--c:#b8601e;"><div class="pk-label">Conversion Rate</div><div class="pk-value">0.00%</div><div class="pk-sub">0 signed ÷ 13 responses</div></div>
+        <div class="perf-card" style="--c:#d97706;"><div class="pk-label">Initial Offer Pipeline</div><div class="pk-value">1</div><div class="pk-sub">Bennie Hodges</div></div>
+        <div class="perf-card" style="--c:#f59e0b;"><div class="pk-label">Nurture Pipeline</div><div class="pk-value">6</div><div class="pk-sub">Price misalignment (incl. Robin Taylor)</div></div>
+        <div class="perf-card" style="--c:#0891b2;"><div class="pk-label">Cost Per Call</div><div class="pk-value">$83</div><div class="pk-sub">$1,085 spent ÷ 13 calls</div></div>
+        <div class="perf-card" style="--c:#f59e0b;"><div class="pk-label">Nurture Pipeline</div><div class="pk-value">5</div><div class="pk-sub">Price misalignment</div></div>
+      </div>
+
+      <div class="chart-row">
+        <div class="chart-wrap">
+          <canvas id="pie-sc" width="240" height="240"></canvas>
+          <div class="chart-center-label"><div class="chart-total">13</div><div class="chart-total-sub">Total Calls</div></div>
+        </div>
+        <div class="chart-legend" id="legend-sc"></div>
+      </div>
+
+      <div class="status-section">
+        <div class="status-panel">
+          <h3>📋 Initial Offer (1)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#d97706"></span><span class="status-name">Bennie Hodges</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Initial Offer – Ready · Whitney · 3/10</span></div>
+
+          <h3 style="margin-top:16px;">🔵 Gathering Info / FUP (1)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#6366f1"></span><span class="status-name">Unknown · Whitney</span></div><span class="status-badge-count" style="background:#eef2ff;color:#6366f1;">Waiting on son to find letter</span></div>
+
+          <h3 style="margin-top:16px;">📞 Missed Call / VM Left (3)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#9ca3af"></span><span class="status-name">Unknown · Whitney</span></div><span class="status-badge-count" style="background:#f3f4f6;color:#6b7280;">VM Left · 3/10</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#9ca3af"></span><span class="status-name">Unknown · Whitney</span></div><span class="status-badge-count" style="background:#f3f4f6;color:#6b7280;">VM Left · 3/11</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#9ca3af"></span><span class="status-name">Unknown · Alex Olson</span></div><span class="status-badge-count" style="background:#f3f4f6;color:#6b7280;">VM Left</span></div>
+        </div>
+
+        <div class="status-panel">
+          <h3>🕐 Nurture – Price Misalignment (6)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">Debora Clark</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Price Misalignment · Whitney · 3/5</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">Margaret Clark</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Price Misalignment · Whitney · 3/5</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">David Rickenbaker</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Price Misalignment · Whitney · 3/5</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">John Taylor</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Price Misalignment · Whitney · 3/10</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">Dorothy Ravenel</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Price Misalignment · Whitney · 3/10</span></div>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#f59e0b"></span><span class="status-name">Robin Taylor</span></div><span class="status-badge-count" style="background:#fef3c7;color:#d97706;">Price Misalignment · Listed $250k · Whitney · 3/10</span></div>
+
+          <h3 style="margin-top:16px;">🚫 Not Interested / DNC (1)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#ef4444"></span><span class="status-name">Deso Laws</span></div><span class="status-badge-count" style="background:#fee2e2;color:#ef4444;">Do Not Mail · Whitney · 3/12</span></div>
+
+          <h3 style="margin-top:16px;">❌ Rejected – Property Problem (1)</h3>
+          <div class="status-row"><div class="status-left"><span class="status-dot" style="background:#dc2626"></span><span class="status-name">Eleanor Cohen</span></div><span class="status-badge-count" style="background:#fee2e2;color:#dc2626;">Rejected · Whitney · 3/10</span></div>
+
+          <div style="margin-top:16px; padding:12px; background:var(--surface2); border-radius:6px; font-size:11px; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; line-height:1.9;">
+            <strong style="color:var(--text);">Total: 13 calls</strong><br>
+            <strong style="color:#d97706;">📋 Initial Offer:</strong> 1 &nbsp;·&nbsp; 
+            <strong style="color:#6366f1;">🔵 FUP:</strong> 1 &nbsp;·&nbsp; <strong style="color:#9ca3af;">📞 Missed/VM:</strong> 3<br>
+            <strong style="color:#f59e0b;">🕐 Nurture:</strong> 6 &nbsp;·&nbsp; <strong style="color:#ef4444;">🚫 Not Int/DNC:</strong> 1<br>
+            <strong style="color:#dc2626;">❌ Rejected:</strong> 1
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-section" style="margin-top:24px; margin-bottom:16px;">
+        <div class="deal-section-header" style="background:#fef9ee; border-bottom:1px solid #f0d98a;"><span style="color:#856404;">📋 Initial Offer Pipeline</span><span class="total-spread" style="color:#856404;">TBD</span></div>
+        <table class="deal-table">
+          <thead><tr><th>Seller</th><th>Closer</th><th>Stage</th><th>Date</th><th class="th-r">Deal Spread</th></tr></thead>
+          <tbody>
+        <!-- FEBRUARY DIVIDER -->
+        <tr>
+          <td colspan="11" style="background:#f5f4f0; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border-top:2px solid var(--border);">FEBRUARY 2026</td>
+        </tr>
+        <tr>
+          <td class="mono">01</td>
+          <td>Feb 12, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">02</td>
+          <td>Feb 16, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">03</td>
+          <td>Feb 20, 2026</td>
+          <td><span class="state-badge md">Maryland</span></td>
+          <td class="td-right">2,546</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,476.68</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">04</td>
+          <td>Feb 26, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag delivered">✓ Received</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <!-- FEB SUBTOTAL -->
+        <tr style="background:#f9f9f7; border-top:1px solid var(--border);">
+          <td colspan="3" style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-muted); padding:8px 14px; font-weight:700;">FEB SUBTOTAL</td>
+          <td style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:700; text-align:right; padding:8px 14px;">10,046</td>
+          <td></td><td></td><td></td><td></td><td></td>
+          <td class="cost-full" style="font-weight:700;">$5,826.68</td>
+          <td class="cost-paid" style="font-size:11px;">All Paid ✓</td>
+        </tr>
+        <!-- MARCH DIVIDER -->
+        <tr>
+          <td colspan="11" style="background:#f5f4f0; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; padding:7px 14px; border-top:2px solid var(--border);">MARCH 2026</td>
+        </tr>
+        <tr>
+          <td class="mono">05</td>
+          <td>Mar 3, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag delivered">✓ Delivered</span></td>
+          <td><span class="status-tag estimated">Est. Mar 17</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">06</td>
+          <td>Mar 11, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 20</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">07</td>
+          <td>Mar 12, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td><span class="status-tag estimated">Est. Mar 28</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">08</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge sc">S. Carolina</span></td>
+          <td class="td-right">5,000</td>
+          <td><span style="background:#fff3cd;color:#856404;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">First Class</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 18</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td class="cost-full">$4,080.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">09</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#fff3cd;color:#856404;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">First Class</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 18</span></td>
+          <td><span class="status-tag estimated">Est. Mar 23</span></td>
+          <td class="cost-full">$2,040.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">10</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">2,500</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td><span class="status-tag estimated">Est. Mar 30</span></td>
+          <td class="cost-full">$1,450.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">11</td>
+          <td>Mar 16, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">5,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#dbeafe;color:#1d5fa8;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;font-weight:600;">📦 Shipped Out</span></td>
+          <td><span class="status-tag estimated">Est. Mar 25</span></td>
+          <td><span class="status-tag estimated">Est. Mar 30</span></td>
+          <td class="cost-full">$2,900.00</td>
+          <td class="cost-paid">✓ Paid</td>
+        </tr>
+        <tr>
+          <td class="mono">12</td>
+          <td>Mar 18, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 27</span></td>
+          <td><span class="status-tag estimated">Est. Apr 1</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">13</td>
+          <td>Mar 19, 2026</td>
+          <td><span class="state-badge me">Maine</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 28</span></td>
+          <td><span class="status-tag estimated">Est. Apr 2</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">14</td>
+          <td>Mar 20, 2026</td>
+          <td><span class="state-badge mi">Michigan</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Mar 31</span></td>
+          <td><span class="status-tag estimated">Est. Apr 5</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">15</td>
+          <td>Mar 23, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 1</span></td>
+          <td><span class="status-tag estimated">Est. Apr 6</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">16</td>
+          <td>Mar 25, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 3</span></td>
+          <td><span class="status-tag estimated">Est. Apr 8</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+        <tr>
+          <td class="mono">17</td>
+          <td>Mar 27, 2026</td>
+          <td><span class="state-badge ny">New York</span></td>
+          <td class="td-right">3,000</td>
+          <td><span style="background:#e8eaf6;color:#3949ab;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">Standard</span></td>
+          <td><span style="background:#f3f4f6;color:#9ca3af;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 5px;border-radius:4px;white-space:nowrap;">🔄 Preparing</span></td>
+          <td><span class="status-tag estimated">Est. Apr 7</span></td>
+          <td><span class="status-tag estimated">Est. Apr 12</span></td>
+          <td class="cost-full">$1,740.00</td>
+          <td class="cost-remaining">$1,302.00</td>
+        </tr>
+      </tbody>
+        </table>
+      </div>
+
+
+    </div><!-- end state-sc -->
+  </div><!-- end tab-performance -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>PH Goldsoil Inc. · The Acre Deal</span>
+    <span>Updated: Feb 26, 2026</span>
+    <span>$0.58 all-in · MD & SC paid · Maine stamps owed $2,170 · 70% qual. lead rate · $25k avg. deal spread</span>
+  </div>
+
+</div>
+  <script>
+    let scPieReady = false;
+    function switchState(state) {
+      document.getElementById('state-md').style.display = state === 'md' ? 'block' : 'none';
+      document.getElementById('state-sc').style.display = state === 'sc' ? 'block' : 'none';
+      document.getElementById('btn-md').classList.toggle('active', state === 'md');
+      document.getElementById('btn-sc').classList.toggle('active', state === 'sc');
+      if (state === 'sc' && !scPieReady) {
+        drawPie('pie-sc', scData, 'legend-sc');
+        attachHover('pie-sc', scData, 'legend-sc');
+        scPieReady = true;
+      }
+    }
+
+    const COLORS = {
+      "Signed":               "#16a34a",
+      "Active Pipeline":      "#1d5fa8",
+      "Initial Offer":        "#d97706",
+      "Sent for Comps":       "#5b3e9e",
+      "Connected – No Deal":  "#64748b",
+      "Nurture":              "#f59e0b",
+      "Missed / VM Left":     "#9ca3af",
+      "Not Interested / DNC": "#ef4444",
+      "Rejected":             "#dc2626",
+      "Gathering Info":       "#6366f1",
+    };
+
+    const mdData = [
+      {label:"Signed",               value:1},
+      {label:"Active Pipeline",      value:4},
+      {label:"Initial Offer",        value:1},
+      {label:"Sent for Comps",       value:1},
+      {label:"Connected – No Deal",  value:2},
+      {label:"Nurture",              value:13},
+      {label:"Missed / VM Left",     value:5},
+      {label:"Not Interested / DNC", value:7},
+      {label:"Rejected",             value:3},
+      {label:"Gathering Info",       value:2},
+    ];
+
+    const scData = [
+      {label:"Initial Offer",        value:1},
+      {label:"Nurture",              value:6},
+      {label:"Missed / VM Left",     value:3},
+      {label:"Gathering Info",       value:1},
+      {label:"Not Interested / DNC", value:1},
+      {label:"Rejected",             value:1},
+    ];
+
+    // Store slice angles per canvas for hover hit-testing
+    const pieSlices = {};
+
+    function drawPie(canvasId, data, legendId, hoveredIdx = -1) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width, H = canvas.height;
+      const cx = W/2, cy = H/2;
+      const outerR = 95, innerR = 58;
+      const total = data.reduce((s,d) => s+d.value, 0);
+      let angle = -Math.PI / 2;
+      ctx.clearRect(0,0,W,H);
+
+      const slices = [];
+      data.forEach((d, i) => {
+        const slice = (d.value / total) * 2 * Math.PI;
+        const isHovered = i === hoveredIdx;
+        const r = isHovered ? outerR + 7 : outerR;
+
+        // Slight pull-out on hover
+        let dx = 0, dy = 0;
+        if (isHovered) {
+          const midAngle = angle + slice / 2;
+          dx = Math.cos(midAngle) * 6;
+          dy = Math.sin(midAngle) * 6;
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(cx + dx, cy + dy);
+        ctx.arc(cx + dx, cy + dy, r, angle, angle + slice);
+        ctx.closePath();
+        ctx.fillStyle = COLORS[d.label] || '#aaa';
+        ctx.fill();
+        if (isHovered) {
+          ctx.strokeStyle = '#fff';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        }
+
+        slices.push({ startAngle: angle, endAngle: angle + slice, dx, dy });
+        angle += slice;
+      });
+
+      pieSlices[canvasId] = slices;
+
+      // Donut hole
+      ctx.beginPath();
+      ctx.arc(cx, cy, innerR, 0, 2*Math.PI);
+      ctx.fillStyle = '#ffffff';
+      ctx.fill();
+
+      // Legend
+      const legendEl = document.getElementById(legendId);
+      if (!legendEl) return;
+      legendEl.innerHTML = '';
+      data.forEach((d, i) => {
+        const pct = ((d.value/total)*100).toFixed(1);
+        const isHov = i === hoveredIdx;
+        legendEl.innerHTML += `
+          <div class="legend-item" style="${isHov ? 'font-weight:700;' : ''}">
+            <span class="legend-dot-pie" style="background:${COLORS[d.label]||'#aaa'};${isHov ? 'transform:scale(1.3);' : ''}"></span>
+            <span>${d.label}</span>
+            <span class="legend-pct" style="${isHov ? 'color:var(--text);font-weight:700;' : ''}">${d.value} (${pct}%)</span>
+          </div>`;
+      });
+    }
+
+    function getHoveredSlice(canvasId, mx, my) {
+      const canvas = document.getElementById(canvasId);
+      const rect = canvas.getBoundingClientRect();
+      const cx = canvas.width / 2, cy = canvas.height / 2;
+      const outerR = 102, innerR = 58;
+      const x = mx - rect.left - cx;
+      const y = my - rect.top - cy;
+      const dist = Math.sqrt(x*x + y*y);
+      if (dist < innerR || dist > outerR) return -1;
+      let angle = Math.atan2(y, x);
+      if (angle < -Math.PI/2) angle += 2 * Math.PI;
+      const slices = pieSlices[canvasId] || [];
+      for (let i = 0; i < slices.length; i++) {
+        let s = slices[i].startAngle;
+        let e = slices[i].endAngle;
+        // normalize
+        if (s < -Math.PI/2) { s += 2*Math.PI; e += 2*Math.PI; }
+        if (angle >= s && angle < e) return i;
+      }
+      return -1;
+    }
+
+    // Shared tooltip element
+    const tooltip = document.createElement('div');
+    tooltip.style.cssText = `
+      position:fixed; pointer-events:none; display:none;
+      background:rgba(20,20,20,0.88); color:#fff;
+      font-family:'IBM Plex Mono',monospace; font-size:12px;
+      padding:8px 13px; border-radius:7px; z-index:9999;
+      box-shadow:0 4px 16px rgba(0,0,0,.25); white-space:nowrap;
+      line-height:1.6;
+    `;
+    document.body.appendChild(tooltip);
+
+    function attachHover(canvasId, data, legendId) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return;
+      const total = data.reduce((s,d) => s+d.value, 0);
+
+      canvas.addEventListener('mousemove', e => {
+        const idx = getHoveredSlice(canvasId, e.clientX, e.clientY);
+        canvas.style.cursor = idx >= 0 ? 'pointer' : 'default';
+        if (idx >= 0) {
+          const d = data[idx];
+          const pct = ((d.value/total)*100).toFixed(1);
+          tooltip.innerHTML = `<strong style="color:${COLORS[d.label]||'#fff'}">${d.label}</strong><br>${d.value} call${d.value !== 1 ? 's' : ''} &nbsp;·&nbsp; ${pct}%`;
+          tooltip.style.display = 'block';
+          tooltip.style.left = (e.clientX + 14) + 'px';
+          tooltip.style.top  = (e.clientY - 10) + 'px';
+          drawPie(canvasId, data, legendId, idx);
+        } else {
+          tooltip.style.display = 'none';
+          drawPie(canvasId, data, legendId, -1);
+        }
+      });
+
+      canvas.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
+        drawPie(canvasId, data, legendId, -1);
+      });
+    }
+
+    window.addEventListener('load', () => {
+      drawPie('pie-md', mdData, 'legend-md');
+      attachHover('pie-md', mdData, 'legend-md');
+      attachHover('pie-sc', scData, 'legend-sc');
+    });
+  </script>
+</body>
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</html>
